@@ -12,7 +12,7 @@ applications:
   random-route: true
   path: target/myapp.jar
   buildpacks:
-  - https://github.com/alexandreroman/hello-javaagent-buildpack.git
+  - https://github.com/shamil2/sqreen-javaagent_buildpack.git
   - https://github.com/cloudfoundry/java-buildpack.git
 ```
 
@@ -31,7 +31,7 @@ line.
 
 As soon as you start your app, you should see this log entry:
 ```text
-2019-05-25T23:43:50.058+02:00 [APP/PROC/WEB/0] [OUT] Hello world, from Java Agent!
+2019-05-25T23:43:50.058+02:00 [APP/PROC/WEB/0] [OUT] Applying sqreen-javaagent buildpack...!
 ```
 
 ## Contribute
