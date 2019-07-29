@@ -16,9 +16,8 @@ applications:
   - https://github.com/ecointet/signalfx-agent-buildpack.git
   - https://github.com/cloudfoundry/java-buildpack.git
   env:
- 	  SIGNALFX_SERVICE_NAME: myapp
+    SIGNALFX_SERVICE_NAME: myapp
     SIGNALFX_ENDPOINT_URL: "http://localhost:9080/v1/trace"
- 	
 ```
 
 This buildpack is actually relying on the official
