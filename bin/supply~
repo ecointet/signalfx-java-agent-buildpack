@@ -1,0 +1,20 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+DEPS_DIR=$3
+INDEX=$4
+
+echo "Applying sqreen-javaagent buildpack..."
+
+echo "Downloading the SQREEN Java agent..."
+wget "https://download.sqreen.com/java/sqreen.jar" -O "${DEPS_DIR}/${INDEX}/sqreen.jar" -q
+
+echo "Adding SQREEN Java agent to JVM..."
+cat >> "${DEPS_DIR}/${INDEX}/config.yml" <<EOL
+name: "sqreen-javaagent"
+config:
+  additional_libraries:
+  java_opts:
+    javaagents: [ /vcap/deps/$INDEX/sqreen.jar ]
+EOL
