@@ -4,6 +4,7 @@ This project shows how to add a custom Java agent to a Cloud Foundry app,
 using a custom builpack.
 
 Add this buildpack to your manifest:
+
 ```yaml
 ---
 applications:
@@ -14,6 +15,10 @@ applications:
   buildpacks:
   - https://github.com/ecointet/signalfx-agent-buildpack.git
   - https://github.com/cloudfoundry/java-buildpack.git
+  env:
+ 	SIGNALFX_SERVICE_NAME: myapp
+ 	SIGNALFX_ENDPOINT_URL: "http://localhost:9080/v1/trace"
+ 	
 ```
 
 This buildpack is actually relying on the official
