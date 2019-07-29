@@ -1,7 +1,8 @@
 # Hello Java Agent Buildpack
 
-This project shows how to add a custom Java agent to a Cloud Foundry app,
-using a custom builpack.
+This project shows how to add the SignalFx Java Tracing Agent (APM) to a Cloud Foundry app, using a custom builpack.
+
+## Notes for Developers
 
 Add this buildpack to your manifest:
 
@@ -37,3 +38,10 @@ As soon as you start your app, you should see this log entry:
 ```text
 2019-05-25T23:43:50.058+02:00 [APP/PROC/WEB/0] [OUT] Applying signalfx-javaagent buildpack...!
 ```
+
+## Notes for Operators
+
+You can download the last stable release from this GitHub (signalfx-apm-buildpack.zip) and upload it to your Cloud Foundry Platform.
+
+`cf create-buildpack signalfx-apm-buildpack signalfx-apm-buildpack-1-0.zip 10`
+`cf buildpacks`
